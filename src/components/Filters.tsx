@@ -1,0 +1,60 @@
+import { easingTypes, type EasingSpeedType } from "../constants/easingTypes";
+import { useFilters } from "../hooks/useFilters";
+
+const Filters = () => {
+  // Get the filter values and functions from zustand
+  const filters = useFilters();
+
+  // Find what the speed types are for the selected easing type
+  const selectedEasingTypeName = filters.easingType;
+  const speedTypes = easingTypes.find(
+    (easingType) => easingType.name === selectedEasingTypeName
+  )?.speedTypes;
+  return (
+    <section>
+      {/* Easing Type */}
+      <label>Easing Type</label>
+      <select onChange={(e) => filters.setEasingType(e.target.value)}>
+        {easingTypes.map((easingType) => (
+          <option
+            key={`fileters-easing-type-${easingType.name}`}
+            value={easingType.name}
+          >
+            {easingType.name}
+          </option>
+        ))}
+      </select>
+
+      {/* Easing Speed, only displayed if easing type has speed types */}
+      {speedTypes && speedTypes.length > 0 && (
+        <>
+          <label>Speed</label>
+          <select
+            onChange={(e) =>
+              filters.setSpeedType(e.target.value as EasingSpeedType)
+            }
+          >
+            {speedTypes.map((speedType) => (
+              <option key={`filters-speed-type-${speedType}`} value={speedType}>
+                {speedType}
+              </option>
+            ))}
+          </select>
+        </>
+      )}
+
+      {/* Duration */}
+      <label>Duration (in seconds)</label>
+      <input
+        type="number"
+        name="duration"
+        min="0"
+        step="0.5"
+        max="15"
+        onChange={(e) => filters.setDuration(+e.target.value)}
+      />
+    </section>
+  );
+};
+
+export default Filters;
