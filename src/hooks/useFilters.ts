@@ -13,7 +13,7 @@ type Filters = {
 
 const defaultFilters: Filters = {
   easingType: "none",
-  speedType: "in",
+  speedType: "out",
   duration: 0.5,
   setEasingType: () => {},
   setSpeedType: () => {},

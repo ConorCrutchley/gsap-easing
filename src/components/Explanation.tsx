@@ -15,7 +15,7 @@ const Explanation = () => {
   const selectedSpeedType = filters.speedType;
 
   return (
-    <section>
+    <aside>
       <h2>{selectedEasingType?.name}</h2>
       <p>{selectedEasingType?.description}</p>
       <p>{selectedSpeedType}</p>
@@ -29,7 +29,32 @@ const Explanation = () => {
           </ul>
         </>
       )}
-    </section>
+      <h3>Feeling</h3>
+      <p>{selectedEasingType?.feeling}</p>
+      {selectedEasingType && selectedEasingType.useCase.length > 0 && (
+        <>
+          <h3>Use Cases</h3>
+          <ul>
+            {selectedEasingType?.useCase.map((useCase, i) => (
+              <li key={`explanation-use-case-${i}`}>{useCase}</li>
+            ))}
+          </ul>
+        </>
+      )}
+      {selectedEasingType && selectedEasingType.examples.length > 0 && (
+        <>
+          <h3>Examples</h3>
+          {selectedEasingType?.examples.map((example, i) => (
+            <p key={`explanation-example-${i}`}>
+              {example.description} <br />
+              <a href={example.link.href} target="_blank" rel="noreferrer">
+                {example.link.text}
+              </a>
+            </p>
+          ))}
+        </>
+      )}
+    </aside>
   );
 };
 
