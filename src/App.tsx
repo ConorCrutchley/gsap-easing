@@ -1,3 +1,4 @@
+import Code from "./components/Code";
 import Explanation from "./components/Explanation";
 import Filters from "./components/Filters";
 import Introduction from "./components/Introduction";
@@ -8,6 +9,7 @@ const App = () => {
       <Introduction />
       <Filters />
       <Explanation />
+      <Code />
     </>
   );
 };

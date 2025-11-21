@@ -1,6 +1,5 @@
 import type { EasingSpeedType } from "../constants/easingTypes";
 import { create } from "zustand";
-import { gsap } from "gsap";
 
 type Filters = {
   easingType: gsap.EaseString;
@@ -12,7 +11,7 @@ type Filters = {
 };
 
 const defaultFilters: Filters = {
-  easingType: "none",
+  easingType: "power1",
   speedType: "out",
   duration: 0.5,
   setEasingType: () => {},

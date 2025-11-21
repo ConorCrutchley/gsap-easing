@@ -109,7 +109,8 @@ export const easingTypes: EasingType[] = [
   },
   {
     name: "power1",
-    description: "A power based eas with mild acceleration / deceleration.",
+    description:
+      "Power1.out is the default easing used by GSAP. It is a power based ease with mild acceleration / deceleration.",
     feeling: "Smooth and subtle. Also known as Quad.",
     useCase: [
       "Most UI animations — subtle and pleasant",
