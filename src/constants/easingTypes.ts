@@ -1,21 +1,4 @@
-import { gsap } from "gsap";
-
-export type EasingSpeedType = "in" | "out" | "inOut";
-
-type EasingType = {
-  name: gsap.EaseString;
-  description: string;
-  feeling: string;
-  useCase: string[];
-  examples: {
-    description: string;
-    link: {
-      href: string;
-      text: string;
-    };
-  }[];
-  speedTypes: EasingSpeedType[];
-};
+import type { EasingSpeedType, EasingType } from "../models/easingType";
 
 const commonTypes: EasingSpeedType[] = ["in", "out", "inOut"];
 

@@ -1,14 +1,6 @@
-import type { EasingSpeedType } from "../constants/easingTypes";
+import type { EasingSpeedType } from "../models/easingType";
+import type { Filters } from "../models/filters";
 import { create } from "zustand";
-
-type Filters = {
-  easingType: gsap.EaseString;
-  speedType: EasingSpeedType;
-  duration: number;
-  setEasingType: (easingType: gsap.EaseString) => void;
-  setSpeedType: (easingSpeed: EasingSpeedType) => void;
-  setDuration: (duration: number) => void;
-};
 
 const defaultFilters: Filters = {
   easingType: "power1",

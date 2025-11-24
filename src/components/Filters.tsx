@@ -1,6 +1,8 @@
-import { easingTypes, type EasingSpeedType } from "../constants/easingTypes";
-import { useFilters } from "../hooks/useFilters";
+import type { EasingSpeedType } from "../models/easingType";
+import { easingTypes } from "../constants/easingTypes";
 import { getSelectedEasingType } from "../utils/getSelectedEasingType";
+import { useFilters } from "../hooks/useFilters";
+
 const Filters = () => {
   // Get the filter values and functions from zustand
   const filters = useFilters();
