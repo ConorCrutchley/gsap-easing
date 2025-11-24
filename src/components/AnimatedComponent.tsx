@@ -1,3 +1,4 @@
+import { generateGSAPFromObject } from "../utils/generateGSAPFromObject";
 import { generateGSAPToObject } from "../utils/generateGSAPToObject";
 import { gsap } from "gsap";
 import { useFilters } from "../hooks/useFilters";
@@ -10,15 +11,10 @@ const AnimatedComponent = () => {
 
   const onClickHandler = () => {
     setIsPlaying(true);
+    const gsapFrom = generateGSAPFromObject(filters);
     const gsapTo = generateGSAPToObject(filters);
     const durationMs = filters.duration * 1000;
-    gsap.fromTo(
-      ".box",
-      {
-        x: 0,
-      },
-      gsapTo
-    );
+    gsap.fromTo(".box", gsapFrom, gsapTo);
 
     setTimeout(() => {
       setIsPlaying(false);
