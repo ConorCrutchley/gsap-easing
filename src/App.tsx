@@ -1,3 +1,4 @@
+import AnimatedComponent from "./components/AnimatedComponent";
 import Code from "./components/Code";
 import Explanation from "./components/Explanation";
 import Filters from "./components/Filters";
@@ -10,6 +11,7 @@ const App = () => {
       <Filters />
       <Explanation />
       <Code />
+      <AnimatedComponent />
     </>
   );
 };
