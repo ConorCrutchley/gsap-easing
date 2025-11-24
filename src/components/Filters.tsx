@@ -12,26 +12,28 @@ const Filters = () => {
   const speedTypes = getSelectedEasingType(selectedEasingTypeName)?.speedTypes;
 
   return (
-    <section>
+    <section className="filters-section">
       {/* Easing Type */}
-      <label>Easing Type</label>
-      <select
-        onChange={(e) => filters.setEasingType(e.target.value)}
-        value={filters.easingType}
-      >
-        {easingTypes.map((easingType) => (
-          <option
-            key={`fileters-easing-type-${easingType.name}`}
-            value={easingType.name}
-          >
-            {easingType.name}
-          </option>
-        ))}
-      </select>
+      <div className="filter">
+        <label>Easing Type</label>
+        <select
+          onChange={(e) => filters.setEasingType(e.target.value)}
+          value={filters.easingType}
+        >
+          {easingTypes.map((easingType) => (
+            <option
+              key={`fileters-easing-type-${easingType.name}`}
+              value={easingType.name}
+            >
+              {easingType.name}
+            </option>
+          ))}
+        </select>
+      </div>
 
       {/* Easing Speed, only displayed if easing type has speed types */}
       {speedTypes && speedTypes.length > 0 && (
-        <>
+        <div className="filter">
           <label>Speed</label>
           <select
             onChange={(e) =>
@@ -45,20 +47,22 @@ const Filters = () => {
               </option>
             ))}
           </select>
-        </>
+        </div>
       )}
 
-      {/* Duration */}
-      <label>Duration (in seconds)</label>
-      <input
-        type="number"
-        name="duration"
-        min="0"
-        step="0.5"
-        max="15"
-        onChange={(e) => filters.setDuration(+e.target.value)}
-        value={filters.duration}
-      />
+      <div className="filter">
+        {/* Duration */}
+        <label>Duration (in seconds)</label>
+        <input
+          type="number"
+          name="duration"
+          min="0"
+          step="0.5"
+          max="15"
+          onChange={(e) => filters.setDuration(+e.target.value)}
+          value={filters.duration}
+        />
+      </div>
     </section>
   );
 };

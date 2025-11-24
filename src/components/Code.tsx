@@ -31,7 +31,7 @@ const Code = () => {
   };
 
   return (
-    <section>
+    <section className="code-section">
       <pre>
         <code id="code">
           gsap.to(".box", {JSON.stringify(gsapTo, null, 2)} );

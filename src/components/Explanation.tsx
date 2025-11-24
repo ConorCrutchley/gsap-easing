@@ -1,3 +1,4 @@
+import Code from "./Code";
 import { getSelectedEasingType } from "../utils/getSelectedEasingType";
 import { useFilters } from "../hooks/useFilters";
 
@@ -53,6 +54,7 @@ const Explanation = () => {
             ))}
           </>
         )}
+      <Code />
     </aside>
   );
 };

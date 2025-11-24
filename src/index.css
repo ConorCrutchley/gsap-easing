@@ -11,6 +11,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --highlight: #646cff;
 }
 
 body {
@@ -19,7 +21,7 @@ body {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--highlight);
   text-decoration: inherit;
 }
 a:hover {
@@ -31,6 +33,8 @@ h1 {
   line-height: 1.1;
 }
 
+select,
+input,
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -42,18 +46,48 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+button {
+  max-width: 6em;
+}
 button:hover {
-  border-color: #646cff;
+  border-color: var(--highlight);
 }
 button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+button:focus-visible,
+select:focus,
+select:focus-visible,
+input:focus,
+input:focus-visible {
+  outline: 4px auto var(--highlight);
 }
-
-.animated-area {
+.flex-col,
+.split-section,
+.filters-section,
+.filter {
+  display: flex;
+  gap: 2em;
+}
+.flex-col {
+  flex-direction: column;
+}
+.filter {
+  gap: 1em;
+  align-items: center;
+}
+.filter > label {
+  font-weight: 500;
+}
+.animation-section {
   width: 100%;
-  min-height: 500px;
-  position: relative;
+}
+.code-section {
+  background-color: #1f1f1f;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  color: #61dafb;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .box {

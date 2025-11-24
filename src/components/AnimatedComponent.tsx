@@ -26,14 +26,12 @@ const AnimatedComponent = () => {
   };
 
   return (
-    <>
+    <section className="flex-col animation-section">
       <button onClick={onClickHandler} disabled={isPlaying}>
         Play
       </button>
-      <section className="animated-area">
-        <div className="box"></div>
-      </section>
-    </>
+      <div className="box"></div>
+    </section>
   );
 };
 
