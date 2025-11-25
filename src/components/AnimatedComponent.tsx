@@ -11,7 +11,7 @@ const AnimatedComponent = () => {
 
   const onClickHandler = () => {
     setIsPlaying(true);
-    const gsapFrom = generateGSAPFromObject(filters);
+    const gsapFrom = generateGSAPFromObject();
     const gsapTo = generateGSAPToObject(filters);
     const durationMs = filters.duration * 1000;
     gsap.fromTo(".box", gsapFrom, gsapTo);
@@ -26,7 +26,9 @@ const AnimatedComponent = () => {
       <button onClick={onClickHandler} disabled={isPlaying}>
         Play
       </button>
-      <div className="box"></div>
+      <div className="animation-area">
+        <div className="box"></div>
+      </div>
     </section>
   );
 };

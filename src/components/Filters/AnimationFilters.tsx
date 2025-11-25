@@ -33,12 +33,12 @@ const AnimationFilters = () => {
   };
 
   const onAnimationXRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value === "ltr" ? 300 : -300;
+    const newValue = e.target.value === "ltr" ? 200 : -200;
     onAnimationNumberChange(newValue, setAnimationX, filters.setAnimationX);
   };
 
   const onAnimationYRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value === "ttb" ? 300 : -300;
+    const newValue = e.target.value === "ttb" ? 200 : -200;
     onAnimationNumberChange(newValue, setAnimationY, filters.setAnimationY);
   };
   return (
@@ -200,6 +200,7 @@ const AnimationFilters = () => {
               id="filters-scale-percentage"
               type="number"
               min="0"
+              max="500"
               step="1"
               value={filters.animation.scale}
               onChange={(e) => {

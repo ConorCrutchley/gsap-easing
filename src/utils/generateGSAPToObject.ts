@@ -17,15 +17,7 @@ export const generateGSAPToObject = (filters: Filters) => {
   }`;
 
   // Generate the GSAP from object
-  const gsapFrom = generateGSAPFromObject(filters);
-
-  // If the from x value > 0, set the to x value to 0
-  const x = filters.animation.x ?? gsapFrom.x;
-  const newX = gsapFrom.x > 0 ? 0 : x;
-
-  // If the from y value > 0, set the to y value to 0
-  const y = filters.animation.y ?? gsapFrom.y;
-  const newY = gsapFrom.y > 0 ? 0 : y;
+  const gsapFrom = generateGSAPFromObject();
 
   // If the opacity is greater than 1, multiply it by 0.01
   // to get a value between 0 and 1
@@ -40,8 +32,8 @@ export const generateGSAPToObject = (filters: Filters) => {
   return {
     duration: filters.duration,
     ease: easingType,
-    x: newX,
-    y: newY,
+    x: filters.animation.x ?? gsapFrom.x,
+    y: filters.animation.y ?? gsapFrom.y,
     scale: newScale,
     opacity: newOpacity,
     rotate: filters.animation.rotate ?? gsapFrom.rotate,
