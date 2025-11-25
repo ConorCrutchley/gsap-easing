@@ -1,20 +1,22 @@
 import AnimatedComponent from "./components/AnimatedComponent";
 import Explanation from "./components/Explanation";
-import Filters from "./components/Filters";
+import Filters from "./components/Filters/Filters";
 import Introduction from "./components/Introduction";
 
 const App = () => {
   return (
-    <main className="flex-col">
-      <section className="flex-col">
+    <>
+      <header className="flex-col">
         <Introduction />
         <Filters />
-      </section>
-      <section className="split-section">
-        <AnimatedComponent />
-        <Explanation />
-      </section>
-    </main>
+      </header>
+      <main className="flex-col">
+        <section className="flex-row">
+          <AnimatedComponent />
+          <Explanation />
+        </section>
+      </main>
+    </>
   );
 };
 

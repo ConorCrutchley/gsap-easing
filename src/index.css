@@ -49,6 +49,12 @@ button {
 button {
   max-width: 6em;
 }
+select {
+  max-width: 8em;
+}
+input {
+  max-width: 80px;
+}
 button:hover {
   border-color: var(--highlight);
 }
@@ -61,21 +67,42 @@ input:focus-visible {
   outline: 4px auto var(--highlight);
 }
 .flex-col,
-.split-section,
-.filters-section,
-.filter {
+.flex-row,
+.filter,
+.animation-filters,
+.animation-filter,
+.animation-filter-radio {
   display: flex;
   gap: 2em;
 }
-.flex-col {
+.flex-col,
+.animation-filter,
+.animation-filter-radio {
   flex-direction: column;
 }
-.filter {
+.flex-wrap,
+.animation-filters {
+  flex-wrap: wrap;
+}
+.animation-filters {
+  width: calc(100% - 4em);
+  justify-content: flex-start;
+}
+.filter,
+.animation-filter {
   gap: 1em;
+}
+.filter {
   align-items: center;
 }
 .filter > label {
   font-weight: 500;
+}
+.animation-filter {
+  width: 100%;
+}
+.animation-filter-radio {
+  gap: 0.5em;
 }
 .animation-section {
   width: 100%;
@@ -96,7 +123,26 @@ input:focus-visible {
   background-color: red;
   border-radius: 1em;
 }
-
+@media (min-width: 600px) {
+  .animation-filter {
+    width: 46%;
+  }
+}
+@media (min-width: 800px) {
+  .animation-filter {
+    width: 30%;
+  }
+}
+@media (min-width: 1050px) {
+  .animation-filter {
+    width: 22.3%;
+  }
+}
+@media (min-width: 1580px) {
+  .animation-filter {
+    width: 10%;
+  }
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
