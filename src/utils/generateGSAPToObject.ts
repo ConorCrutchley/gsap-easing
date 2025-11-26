@@ -1,4 +1,5 @@
 import type { Filters } from "../models/filters";
+import type { GSAPTo } from "../models/gsapFromTo";
 import { generateGSAPFromObject } from "./generateGSAPFromObject";
 import { getSelectedEasingType } from "./getSelectedEasingType";
 
@@ -29,7 +30,7 @@ export const generateGSAPToObject = (filters: Filters) => {
   const scale = filters.animation.scale ?? gsapFrom.scale;
   const newScale = scale > 1 ? scale * 0.01 : scale;
 
-  return {
+  const gsapTo: GSAPTo = {
     duration: filters.duration,
     ease: easingType,
     x: filters.animation.x ?? gsapFrom.x,
@@ -40,4 +41,6 @@ export const generateGSAPToObject = (filters: Filters) => {
     skewX: filters.animation.skewX ?? gsapFrom.skewX,
     skewY: filters.animation.skewY ?? gsapFrom.skewY,
   };
+
+  return gsapTo;
 };

@@ -7,7 +7,7 @@ const defaultFilters: Filters = {
   speedType: "out",
   duration: 0.5,
   animation: {
-    x: 300,
+    x: 200,
     y: null,
     rotate: null,
     scale: null,

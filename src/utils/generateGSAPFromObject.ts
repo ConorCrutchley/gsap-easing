@@ -1,5 +1,7 @@
+import type { GSAPFrom } from "../models/gsapFromTo";
+
 export const generateGSAPFromObject = () => {
-  return {
+  const gsapFrom: GSAPFrom = {
     x: 0,
     y: 0,
     rotate: 0,
@@ -8,4 +10,5 @@ export const generateGSAPFromObject = () => {
     skewX: 0,
     skewY: 0,
   };
+  return gsapFrom;
 };
