@@ -2,7 +2,12 @@ export type EasingSpeedType = "in" | "out" | "inOut";
 
 export type EasingType = {
   name: gsap.EaseString;
-  description: string;
+  descriptions: {
+    default: string;
+    in?: string;
+    out?: string;
+    inOut?: string;
+  };
   feeling: string;
   useCase: string[];
   examples: {

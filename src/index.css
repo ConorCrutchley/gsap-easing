@@ -105,6 +105,9 @@ input:focus-visible {
 .animation-filter-radio {
   gap: 0.5em;
 }
+main {
+  flex-direction: column;
+}
 .animation-section {
   width: 100%;
 }
@@ -124,7 +127,7 @@ input:focus-visible {
   height: 501px;
   background-color: #1f1f1f;
   margin: 0 auto;
-  background-size: 100px 100px;
+  background-size: 50px 50px;
   background-image: linear-gradient(to right, grey 1px, transparent 1px),
     linear-gradient(to bottom, grey 1px, transparent 1px);
 }
@@ -145,6 +148,12 @@ input:focus-visible {
   }
 }
 @media (min-width: 1050px) {
+  main {
+    flex-direction: row;
+  }
+  main aside {
+    width: 40%;
+  }
   .animation-filter {
     width: 22.3%;
   }

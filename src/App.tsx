@@ -15,11 +15,9 @@ const App = () => {
         <Introduction />
         <Filters />
       </header>
-      <main className="flex-col">
-        <section className="flex-row">
-          <AnimatedComponent />
-          <Explanation />
-        </section>
+      <main className="flex-row">
+        <AnimatedComponent />
+        <Explanation />
       </main>
     </>
   );

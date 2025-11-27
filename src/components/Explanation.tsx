@@ -21,6 +21,12 @@ const Explanation = () => {
   const hasSpeedTypes =
     selectedEasingType && selectedEasingType.speedTypes.length > 0;
 
+  // Find the description for the selected easing type
+  const selectedDescription =
+    hasSpeedTypes && selectedEasingType.descriptions[selectedSpeedType]
+      ? selectedEasingType.descriptions[selectedSpeedType]
+      : selectedEasingType?.descriptions.default;
+
   return (
     <aside>
       {/* Name and speed type */}
@@ -30,7 +36,7 @@ const Explanation = () => {
       </h2>
 
       {/* Description */}
-      <p>{selectedEasingType?.description}</p>
+      <p>{selectedDescription}</p>
 
       {/* Speed types if the easing type has them */}
       {hasSpeedTypes && (
