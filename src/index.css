@@ -130,6 +130,93 @@ main {
   background-size: 50px 50px;
   background-image: linear-gradient(to right, grey 1px, transparent 1px),
     linear-gradient(to bottom, grey 1px, transparent 1px);
+  position: relative;
+}
+.animation-area ul {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.animation-area ul li {
+  position: absolute;
+  padding: 0;
+  width: 2em;
+}
+.animation-area-x-axis {
+  bottom: -1em;
+  width: 100%;
+}
+.animation-area-y-axis {
+  left: -3em;
+  height: 100%;
+  text-align: right;
+}
+.animation-area-x-axis li:nth-of-type(1) {
+  left: -20px;
+}
+.animation-area-x-axis li:nth-of-type(2) {
+  left: 30px;
+}
+.animation-area-x-axis li:nth-of-type(3) {
+  left: 80px;
+}
+.animation-area-x-axis li:nth-of-type(4) {
+  left: 130px;
+}
+.animation-area-x-axis li:nth-of-type(5) {
+  left: 187px;
+}
+.animation-area-x-axis li:nth-of-type(6) {
+  left: 245px;
+}
+.animation-area-x-axis li:nth-of-type(7) {
+  left: 292px;
+}
+.animation-area-x-axis li:nth-of-type(8) {
+  left: 337px;
+}
+.animation-area-x-axis li:nth-of-type(9) {
+  left: 387px;
+}
+.animation-area-x-axis li:nth-of-type(10) {
+  left: 437px;
+}
+.animation-area-x-axis li:nth-of-type(11) {
+  left: 487px;
+}
+.animation-area-y-axis li:nth-of-type(1) {
+  top: -12px;
+}
+.animation-area-y-axis li:nth-of-type(2) {
+  top: 36px;
+}
+.animation-area-y-axis li:nth-of-type(3) {
+  top: 88px;
+}
+.animation-area-y-axis li:nth-of-type(4) {
+  top: 138px;
+}
+.animation-area-y-axis li:nth-of-type(5) {
+  top: 186px;
+}
+.animation-area-y-axis li:nth-of-type(6) {
+  top: 238px;
+}
+.animation-area-y-axis li:nth-of-type(7) {
+  top: 288px;
+}
+.animation-area-y-axis li:nth-of-type(8) {
+  top: 338px;
+}
+.animation-area-y-axis li:nth-of-type(9) {
+  top: 388px;
+}
+.animation-area-y-axis li:nth-of-type(10) {
+  top: 438px;
+}
+.animation-area-y-axis li:nth-of-type(11) {
+  top: 488px;
 }
 .box {
   width: 100px;

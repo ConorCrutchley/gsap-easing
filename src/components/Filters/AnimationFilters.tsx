@@ -15,8 +15,8 @@ const AnimationFilters = () => {
   const filters = useFilters();
 
   // States
-  const [animationX, setAnimationX] = useState(300);
-  const [animationY, setAnimationY] = useState(300);
+  const [animationX, setAnimationX] = useState(200);
+  const [animationY, setAnimationY] = useState(200);
   const [animationRotate, setAnimationRotate] = useState(360);
   const [animationScale, setAnimationScale] = useState(100);
   const [animationOpacity, setAnimationOpacity] = useState(0);

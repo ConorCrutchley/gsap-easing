@@ -55,6 +55,32 @@ const AnimatedComponent = () => {
       </button>
       <div className="animation-area">
         <div className="box"></div>
+        <ul className="animation-area-x-axis">
+          <li>-250</li>
+          <li>-200</li>
+          <li>-150</li>
+          <li>-100</li>
+          <li>-50</li>
+          <li>0</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+          <li>200</li>
+          <li>250</li>
+        </ul>
+        <ul className="animation-area-y-axis">
+          <li>-250</li>
+          <li>-200</li>
+          <li>-150</li>
+          <li>-100</li>
+          <li>-50</li>
+          <li>0</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+          <li>200</li>
+          <li>250</li>
+        </ul>
       </div>
     </section>
   );
