@@ -1,6 +1,15 @@
 import { useState, type ChangeEvent } from "react";
 import { useFilters } from "../../hooks/useFilters";
 
+/**
+ * Animation filters component.
+ * This component renders a form with checkboxes and number inputs
+ * for each animation filter property.
+ *
+ * These filters are used to control what happens to the element
+ * at the end of the animation.
+ * @returns {JSX.Element} - The rendered animation filters form.
+ */
 const AnimationFilters = () => {
   // Get the filter values and functions from zustand
   const filters = useFilters();
@@ -14,6 +23,16 @@ const AnimationFilters = () => {
   const [animationSkewX, setAnimationSkewX] = useState(45);
   const [animationSkewY, setAnimationSkewY] = useState(45);
 
+  /**
+   * Toggles the animation filter property between the current state
+   * and null.
+   * If the current state is null, sets the filter property to the
+   * current state. If the current state is not null, sets the filter
+   * property to null.
+   * @param {number} currentState - The current state of the animation filter
+   * @param {number|null} filterAnimationProp - The animation filter property to toggle
+   * @param {(filterAnimationProp: number | null) => void} filterAnimationStateSetter - The setter function for the animation filter property
+   */
   const onAnimationCheckboxChange = (
     currentState: number,
     filterAnimationProp: number | null,
@@ -23,6 +42,13 @@ const AnimationFilters = () => {
     filterAnimationStateSetter(newValue);
   };
 
+  /**
+   * Updates the state of an animation filter property and the
+   * corresponding filter state in the zustand store.
+   * @param {number} newValue - The new value of the animation filter property.
+   * @param {(newState: number) => void} stateSetter - The setter function for the animation filter property state.
+   * @param {(filterAnimationProp: number | null) => void} filterAnimationStateSetter - The setter function for the animation filter property in the zustand store.
+   */
   const onAnimationNumberChange = (
     newValue: number,
     stateSetter: (newState: number) => void,
@@ -32,15 +58,30 @@ const AnimationFilters = () => {
     filterAnimationStateSetter(newValue);
   };
 
+  /**
+   * Handles a change event for the Translate X radio buttons.
+   * If the value of the changed radio button is "ltr", sets the
+   * animation X value to 200, otherwise sets it to -200.
+   * Calls onAnimationNumberChange with the new value.
+   * @param {ChangeEvent<HTMLInputElement>} e - The change event for the radio button
+   */
   const onAnimationXRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value === "ltr" ? 200 : -200;
     onAnimationNumberChange(newValue, setAnimationX, filters.setAnimationX);
   };
 
+  /**
+   * Handles a change event for the Translate Y radio buttons.
+   * If the value of the changed radio button is "ttb", sets the
+   * animation Y value to 200, otherwise sets it to -200.
+   * Calls onAnimationNumberChange with the new value.
+   * @param {ChangeEvent<HTMLInputElement>} e - The change event for the radio button
+   */
   const onAnimationYRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value === "ttb" ? 200 : -200;
     onAnimationNumberChange(newValue, setAnimationY, filters.setAnimationY);
   };
+
   return (
     <div className="animation-filters">
       {/* Translate X */}

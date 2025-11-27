@@ -2,6 +2,10 @@ import Code from "./Code";
 import { getSelectedEasingType } from "../utils/getSelectedEasingType";
 import { useFilters } from "../hooks/useFilters";
 
+/**
+ * A component that displays an explanation of the currently
+ * selected easing type as well as the code for the animation.
+ */
 const Explanation = () => {
   // Get the filter values and functions from zustand
   const filters = useFilters();
@@ -13,12 +17,23 @@ const Explanation = () => {
   // Find the selected speed type
   const selectedSpeedType = filters.speedType;
 
+  // Check if the easing type has speed types
+  const hasSpeedTypes =
+    selectedEasingType && selectedEasingType.speedTypes.length > 0;
+
   return (
     <aside>
-      <h2>{selectedEasingType?.name}</h2>
+      {/* Name and speed type */}
+      <h2>
+        {selectedEasingType?.name}
+        {hasSpeedTypes && `.${selectedSpeedType}`}
+      </h2>
+
+      {/* Description */}
       <p>{selectedEasingType?.description}</p>
-      <p>{selectedSpeedType}</p>
-      {selectedEasingType && selectedEasingType.speedTypes.length > 0 && (
+
+      {/* Speed types if the easing type has them */}
+      {hasSpeedTypes && (
         <>
           <p>Speed types for this easing type include:</p>
           <ul>
@@ -28,8 +43,12 @@ const Explanation = () => {
           </ul>
         </>
       )}
+
+      {/* Feeling */}
       <h3>Feeling</h3>
       <p>{selectedEasingType?.feeling}</p>
+
+      {/* Use cases and examples if the easing type has them */}
       {selectedEasingType &&
         selectedEasingType.useCase.length > 0 && (
           <>
@@ -54,6 +73,8 @@ const Explanation = () => {
             ))}
           </>
         )}
+
+      {/* Code */}
       <Code />
     </aside>
   );

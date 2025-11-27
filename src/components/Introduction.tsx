@@ -1,3 +1,9 @@
+/**
+ * A component that displays an introduction to the project.
+ * It contains a heading and two paragraphs of text that describe
+ * the project's goals and provide a link to the original
+ * easing visualizer on the GSAP website.
+ */
 const Introduction = () => {
   return (
     <section>

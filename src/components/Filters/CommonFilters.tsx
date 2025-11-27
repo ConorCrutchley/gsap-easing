@@ -3,6 +3,12 @@ import { easingTypes } from "../../constants/easingTypes";
 import { getSelectedEasingType } from "../../utils/getSelectedEasingType";
 import { useFilters } from "../../hooks/useFilters";
 
+/**
+ * A component that displays filters for easing types, speed types, and durations.
+ * It uses the useFilters hook to get the current filter values and functions.
+ * It renders a select input for easing types, a select input for speed types
+ * if the selected easing type has speed types, and an input for duration.
+ */
 const CommonFilters = () => {
   // Get the filter values and functions from zustand
   const filters = useFilters();

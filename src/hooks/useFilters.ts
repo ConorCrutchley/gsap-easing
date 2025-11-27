@@ -2,6 +2,7 @@ import type { EasingSpeedType } from "../models/easingType";
 import type { Filters } from "../models/filters";
 import { create } from "zustand";
 
+// Default filters
 const defaultFilters: Filters = {
   easingType: "power1",
   speedType: "out",
@@ -27,6 +28,7 @@ const defaultFilters: Filters = {
   setAnimationSkewY: () => {},
 };
 
+// Zustand store
 export const useFilters = create<Filters>()((set) => ({
   ...defaultFilters,
   setEasingType: (easingType: gsap.EaseString) => set({ easingType }),

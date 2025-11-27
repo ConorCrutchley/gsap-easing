@@ -1,5 +1,12 @@
 import type { GSAPFrom } from "../models/gsapFromTo";
 
+/**
+ * Generates a GSAPFrom object, which is used to define the starting
+ * properties of an animation.
+ * TODO: Incorporate filters so that the user can control the starting
+ * properties of the animation
+ * @returns {GSAPFrom} The GSAPFrom object.
+ */
 export const generateGSAPFromObject = () => {
   const gsapFrom: GSAPFrom = {
     x: 0,
