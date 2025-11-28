@@ -79,25 +79,23 @@ const AnimationFilters = () => {
           />
         </div>
         {filters.animation.x !== null && (
-          <div className="animation-filter">
-            <div className="filter">
-              <label htmlFor="filters-x-position">Pixels</label>
-              <input
-                id="filters-x-position"
-                type="number"
-                min="-200"
-                max="200"
-                step="1"
-                value={filters.animation.x}
-                onChange={(e) => {
-                  onAnimationNumberChange(
-                    +e.target.value,
-                    setAnimationX,
-                    filters.setAnimationX
-                  );
-                }}
-              />
-            </div>
+          <div className="filter">
+            <label htmlFor="filters-x-position">Pixels</label>
+            <input
+              id="filters-x-position"
+              type="number"
+              min="-200"
+              max="200"
+              step="1"
+              value={filters.animation.x}
+              onChange={(e) => {
+                onAnimationNumberChange(
+                  +e.target.value,
+                  setAnimationX,
+                  filters.setAnimationX
+                );
+              }}
+            />
           </div>
         )}
       </div>
@@ -121,25 +119,23 @@ const AnimationFilters = () => {
           />
         </div>
         {filters.animation.y !== null && (
-          <div className="animation-filter">
-            <div className="filter">
-              <label htmlFor="filters-y-position">Pixels</label>
-              <input
-                id="filters-y-position"
-                type="number"
-                min="-200"
-                max="200"
-                step="1"
-                value={filters.animation.y}
-                onChange={(e) => {
-                  onAnimationNumberChange(
-                    +e.target.value,
-                    setAnimationY,
-                    filters.setAnimationY
-                  );
-                }}
-              />
-            </div>
+          <div className="filter">
+            <label htmlFor="filters-y-position">Pixels</label>
+            <input
+              id="filters-y-position"
+              type="number"
+              min="-200"
+              max="200"
+              step="1"
+              value={filters.animation.y}
+              onChange={(e) => {
+                onAnimationNumberChange(
+                  +e.target.value,
+                  setAnimationY,
+                  filters.setAnimationY
+                );
+              }}
+            />
           </div>
         )}
       </div>

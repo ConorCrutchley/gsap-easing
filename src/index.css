@@ -93,17 +93,14 @@ input:focus-visible {
 .animation-filter {
   gap: 1em;
 }
+.animation-filter {
+  width: 12em;
+}
 .filter {
   align-items: center;
 }
 .filter > label {
   font-weight: 500;
-}
-.animation-filter {
-  width: 100%;
-}
-.animation-filter-radio {
-  gap: 0.5em;
 }
 main {
   flex-direction: column;
@@ -224,30 +221,12 @@ main {
   background-color: red;
   border-radius: 1em;
 }
-@media (min-width: 600px) {
-  .animation-filter {
-    width: 46%;
-  }
-}
-@media (min-width: 800px) {
-  .animation-filter {
-    width: 30%;
-  }
-}
 @media (min-width: 1050px) {
   main {
     flex-direction: row;
   }
   main aside {
     width: 40%;
-  }
-  .animation-filter {
-    width: 22.3%;
-  }
-}
-@media (min-width: 1580px) {
-  .animation-filter {
-    width: 10%;
   }
 }
 @media (prefers-color-scheme: light) {
