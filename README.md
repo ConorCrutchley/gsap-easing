@@ -29,3 +29,6 @@ This project is still in its infancy and there are ways it could be improved to 
 - Adding real world examples of easing types so users can see how a particular easing is used in the real world.
 - Adapting the animated section for mobile devices.
 - Setting from filters so the user can change where the animation starts from as well as where it ends.
+- Add a timer on the animation so the user can see where the animation is at while it's playing.
+- Add the option to compare different types of animation.
+- Add a graph component similar to the GSAP easing visualizer so the timings of the animation are clearer.
