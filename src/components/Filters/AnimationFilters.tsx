@@ -1,5 +1,5 @@
-import { useState, type ChangeEvent } from "react";
 import { useFilters } from "../../hooks/useFilters";
+import { useState } from "react";
 
 /**
  * Animation filters component.
@@ -58,30 +58,6 @@ const AnimationFilters = () => {
     filterAnimationStateSetter(newValue);
   };
 
-  /**
-   * Handles a change event for the Translate X radio buttons.
-   * If the value of the changed radio button is "ltr", sets the
-   * animation X value to 200, otherwise sets it to -200.
-   * Calls onAnimationNumberChange with the new value.
-   * @param {ChangeEvent<HTMLInputElement>} e - The change event for the radio button
-   */
-  const onAnimationXRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value === "ltr" ? 200 : -200;
-    onAnimationNumberChange(newValue, setAnimationX, filters.setAnimationX);
-  };
-
-  /**
-   * Handles a change event for the Translate Y radio buttons.
-   * If the value of the changed radio button is "ttb", sets the
-   * animation Y value to 200, otherwise sets it to -200.
-   * Calls onAnimationNumberChange with the new value.
-   * @param {ChangeEvent<HTMLInputElement>} e - The change event for the radio button
-   */
-  const onAnimationYRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value === "ttb" ? 200 : -200;
-    onAnimationNumberChange(newValue, setAnimationY, filters.setAnimationY);
-  };
-
   return (
     <div className="animation-filters">
       {/* Translate X */}
@@ -103,28 +79,24 @@ const AnimationFilters = () => {
           />
         </div>
         {filters.animation.x !== null && (
-          <div className="animation-filter-radio">
+          <div className="animation-filter">
             <div className="filter">
+              <label htmlFor="filters-x-position">Pixels</label>
               <input
-                id="filters-translate-x-ltr"
-                name="filters-translate-x-direction"
-                type="radio"
-                value="ltr"
-                checked={filters.animation.x > 0}
-                onChange={onAnimationXRadioChange}
+                id="filters-x-position"
+                type="number"
+                min="-200"
+                max="200"
+                step="1"
+                value={filters.animation.x}
+                onChange={(e) => {
+                  onAnimationNumberChange(
+                    +e.target.value,
+                    setAnimationX,
+                    filters.setAnimationX
+                  );
+                }}
               />
-              <label htmlFor="filters-translate-x-ltr">Left to Right</label>
-            </div>
-            <div className="filter">
-              <input
-                id="filters-translate-x-rtl"
-                name="filters-translate-x-direction"
-                type="radio"
-                value="rtl"
-                checked={filters.animation.x < 0}
-                onChange={onAnimationXRadioChange}
-              />
-              <label htmlFor="filters-translate-x-rtl">Right to Left</label>
             </div>
           </div>
         )}
@@ -149,28 +121,24 @@ const AnimationFilters = () => {
           />
         </div>
         {filters.animation.y !== null && (
-          <div className="animation-filter-radio">
+          <div className="animation-filter">
             <div className="filter">
+              <label htmlFor="filters-y-position">Pixels</label>
               <input
-                id="filters-translate-y-ttb"
-                name="filters-translate-y-direction"
-                type="radio"
-                value="ttb"
-                checked={filters.animation.y > 0}
-                onChange={onAnimationYRadioChange}
+                id="filters-y-position"
+                type="number"
+                min="-200"
+                max="200"
+                step="1"
+                value={filters.animation.y}
+                onChange={(e) => {
+                  onAnimationNumberChange(
+                    +e.target.value,
+                    setAnimationY,
+                    filters.setAnimationY
+                  );
+                }}
               />
-              <label htmlFor="filters-translate-y-ttb">Top to Bottom</label>
-            </div>
-            <div className="filter">
-              <input
-                id="filters-translate-y-btt"
-                name="filters-translate-y-direction"
-                type="radio"
-                value="btt"
-                checked={filters.animation.y < 0}
-                onChange={onAnimationYRadioChange}
-              />
-              <label htmlFor="filters-translate-y-btt">Bottom to Top</label>
             </div>
           </div>
         )}
